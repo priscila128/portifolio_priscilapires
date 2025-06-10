@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portifólio - Priscila Pires</title>
+  <link rel="stylesheet" href="portifolio.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/1.jpg">
+
+</head>
+<body>
+  <header>
+    <div class="logo">
+		<img class="imglogo" src="images/2.jpg">
+	</div>
+    <nav class="menu">
+      <ul>
+        <li><a href="portifolio.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="contatos.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+   
+  <h2>Projeto-TCC telas iniciais</h2>
+  <br/>
+ <p style="text-align: center;">Site na web, utilizando HTML, CSS e JavaScript.</p>
+  <div class="carrossel-container">
+    <div class="carrossel" id="carrossel1">
+      <img src="images/print1.png" alt="Evento 1">
+      <img src="images/print2.png" alt="Evento 2">
+      <img src="images/print3.png" alt="Evento 3">
+      <img src="images/print4.png" alt="Evento 3">
+      <img src="images/print5.png" alt="Evento 3">
+    </div>
+    <button class="btn prev" onclick="moverSlide('carrossel1', -1)">‹</button>
+    <button class="btn next" onclick="moverSlide('carrossel1', 1)">›</button>
+  </div>
+
+  <h2>Aplicativo para dispositivos móveis - Geografia/Geologia</h2>
+  <br/>
+  <p style="text-align: center;">Aplicativo para dispositivos móveis, parceria entre SESI E SENAI, utilizando flutter.</p>
+  <div class="carrossel-container-diferente">
+    <div class="carrossel" id="carrossel2">
+      <img src="images/print6.png" alt="Projeto 1">
+      <img src="images/print7.png" alt="Projeto 2">
+      <img src="images/print8.png" alt="Projeto 3">
+      <img src="images/print9.png" alt="Projeto 3">
+      <img src="images/print10.png" alt="Projeto 3">
+      <img src="images/print11.png" alt="Projeto 3">
+      <img src="images/print12.png" alt="Projeto 3">
+      <img src="images/print13.png" alt="Projeto 3">
+      <img src="images/print14.png" alt="Projeto 3">
+    </div>
+    <button class="btn prev" onclick="moverSlide('carrossel2', -1)">‹</button>
+    <button class="btn next" onclick="moverSlide('carrossel2', 1)">›</button>
+  </div>
+
+  <h2>Projeto Lingua Portuguesa/Pré-modernismo</h2>
+  <br/>
+  <p style="text-align: center;">Site na web, parceria entre SESI E SENAI, utilizando HTML, CSS e JavaScript.</p>
+  <div class="carrossel-container">
+    <div class="carrossel" id="carrossel3">
+      <img src="images/print15.png" alt="Campo 1">
+      <img src="images/print16.png" alt="Campo 2">
+      <img src="images/print17.png" alt="Campo 3">
+    </div>
+    <button class="btn prev" onclick="moverSlide('carrossel3', -1)">‹</button>
+    <button class="btn next" onclick="moverSlide('carrossel3', 1)">›</button>
+  </div>
+
+<h2>Projeto Química/Sais e minerais</h2>
+<br/>
+<p style="text-align: center;">Site na web, parceria entre SESI E SENAI, utilizando HTML, CSS e JavaScript.</p>
+  <div class="carrossel-container">
+    <div class="carrossel" id="carrossel4">
+      <img src="images/printq1.jpeg" alt="Campo 1">
+      <img src="images/printq2.jpeg" alt="Campo 2">
+    </div>
+    <button class="btn prev" onclick="moverSlide('carrossel4', -1)">‹</button>
+    <button class="btn next" onclick="moverSlide('carrossel4', 1)">›</button>
+  </div>
+  <h2>Projeto Geografia/Regiões metropólitans-Campinas</h2>
+  <br/>
+  <p style="text-align: center;">Site na web, parceria entre SESI E SENAI, utilizando HTML e CSS.</p>
+  <div class="carrossel-container">
+    <div class="carrossel" id="carrossel5">
+      <img src="images/printge.jpeg" alt="Campo 1">
+      <img src="images/printgeo.jpeg" alt="Campo 2">
+    </div>
+    <button class="btn prev" onclick="moverSlide('carrossel5', -1)">‹</button>
+    <button class="btn next" onclick="moverSlide('carrossel5', 1)">›</button>
+  </div>
+
+   <script>
+    const posicoes = {
+      carrossel1: 0,
+      carrossel2: 0,
+      carrossel3: 0,
+      carrossel4: 0,
+      carrossel5: 0
+    };
+
+    function moverSlide(id, direcao) {
+      const carrossel = document.getElementById(id);
+      const totalSlides = carrossel.children.length;
+      posicoes[id] += direcao;
+
+      if (posicoes[id] < 0) posicoes[id] = totalSlides - 1;
+      if (posicoes[id] >= totalSlides) posicoes[id] = 0;
+
+      const largura = carrossel.clientWidth;
+      carrossel.style.transform = `translateX(-${posicoes[id] * largura}px)`;
+    }
+  </script>
+
+  <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="images/1.jpg" alt="Logo Priscila Pires" />
+      <p>&copy; 2025 Priscila Pires</p>
+      <p>Desenvolvido com ❤️ por Priscila Pires</p>
+    </div>
+
+    <div class="footer-contato">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="https://wa.me/19989679890" target="_blank">WhatsApp</a></li>
+        <li><a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">priscilapires016@gmail.com</a></li>
+        <li><a href="https://www.instagram.com/eupriscila_pires/" target="_blank">instagram</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
